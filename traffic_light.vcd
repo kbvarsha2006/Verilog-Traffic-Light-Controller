@@ -1,0 +1,250 @@
+$date
+	Sat Nov  7 15:30:39 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module traffic_light_tb $end
+$var wire 1 ! ns_yellow $end
+$var wire 1 " ns_red $end
+$var wire 1 # ns_green $end
+$var wire 1 $ ew_yellow $end
+$var wire 1 % ew_red $end
+$var wire 1 & ew_green $end
+$var reg 1 ' clk $end
+$var reg 1 ( reset $end
+$scope module uut $end
+$var wire 1 ' clk $end
+$var wire 1 ( reset $end
+$var parameter 32 ) GREEN_TIME $end
+$var parameter 32 * YELLOW_TIME $end
+$var reg 32 + count [31:0] $end
+$var reg 1 & ew_green $end
+$var reg 1 % ew_red $end
+$var reg 1 $ ew_yellow $end
+$var reg 1 # ns_green $end
+$var reg 1 " ns_red $end
+$var reg 1 ! ns_yellow $end
+$var reg 2 , state [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b11 *
+b1010 )
+$end
+#0
+$dumpvars
+b0 ,
+b0 +
+1(
+0'
+0&
+1%
+0$
+1#
+0"
+0!
+$end
+#5
+1'
+#10
+0'
+0(
+#15
+b1 +
+1'
+#20
+0'
+#25
+b10 +
+1'
+#30
+0'
+#35
+b11 +
+1'
+#40
+0'
+#45
+b100 +
+1'
+#50
+0'
+#55
+b101 +
+1'
+#60
+0'
+#65
+b110 +
+1'
+#70
+0'
+#75
+b111 +
+1'
+#80
+0'
+#85
+b1000 +
+1'
+#90
+0'
+#95
+b1001 +
+1'
+#100
+0'
+#105
+1!
+1%
+0#
+b0 +
+b1 ,
+1'
+#110
+0'
+#115
+b1 +
+1'
+#120
+0'
+#125
+b10 +
+1'
+#130
+0'
+#135
+1&
+1"
+0%
+0!
+b0 +
+b10 ,
+1'
+#140
+0'
+#145
+b1 +
+1'
+#150
+0'
+#155
+b10 +
+1'
+#160
+0'
+#165
+b11 +
+1'
+#170
+0'
+#175
+b100 +
+1'
+#180
+0'
+#185
+b101 +
+1'
+#190
+0'
+#195
+b110 +
+1'
+#200
+0'
+#205
+b111 +
+1'
+#210
+0'
+#215
+b1000 +
+1'
+#220
+0'
+#225
+b1001 +
+1'
+#230
+0'
+#235
+1$
+0&
+1"
+b0 +
+b11 ,
+1'
+#240
+0'
+#245
+b1 +
+1'
+#250
+0'
+#255
+b10 +
+1'
+#260
+0'
+#265
+1%
+1#
+0$
+0"
+b0 +
+b0 ,
+1'
+#270
+0'
+#275
+b1 +
+1'
+#280
+0'
+#285
+b10 +
+1'
+#290
+0'
+#295
+b11 +
+1'
+#300
+0'
+#305
+b100 +
+1'
+#310
+0'
+#315
+b101 +
+1'
+#320
+0'
+#325
+b110 +
+1'
+#330
+0'
+#335
+b111 +
+1'
+#340
+0'
+#345
+b1000 +
+1'
+#350
+0'
+#355
+b1001 +
+1'
+#360
+0'
