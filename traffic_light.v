@@ -1,79 +1,64 @@
-module traffic_light(
+module traffic_light_controller(
     input clk,
     input reset,
-    output reg ns_red,
-    output reg ns_yellow,
-    output reg ns_green,
-    output reg ew_red,
-    output reg ew_yellow,
-    output reg ew_green
+    output reg [1:0] NS_light,
+    output reg [1:0] EW_light
 );
 
-reg [1:0] state;
-reg [31:0] count;
+    // State definitions
+    parameter S0 = 2'b00,
+              S1 = 2'b01,
+              S2 = 2'b10,
+              S3 = 2'b11;
 
-parameter GREEN_TIME = 10;
-parameter YELLOW_TIME = 3;
+    reg [1:0] state;
 
-always @(posedge clk or posedge reset)
-begin
-    if (reset) begin
-        state <= 0;
-        count <= 0;
+    // State transition
+    always @(posedge clk or posedge reset)
+    begin
+        if (reset)
+            state <= S0;
+        else
+        begin
+            case (state)
+                S0: state <= S1;
+                S1: state <= S2;
+                S2: state <= S3;
+                S3: state <= S0;
+                default: state <= S0;
+            endcase
+        end
     end
-    else begin
-        case(state)
 
-            0: begin
-                if(count == GREEN_TIME-1) begin
-                    state <= 1;
-                    count <= 0;
-                end
-                else count <= count + 1;
+    // Traffic light outputs
+    always @(*)
+    begin
+        case (state)
+            S0: begin
+                NS_light = 2'b10; // Green
+                EW_light = 2'b00; // Red
             end
 
-            1: begin
-                if(count == YELLOW_TIME-1) begin
-                    state <= 2;
-                    count <= 0;
-                end
-                else count <= count + 1;
+            S1: begin
+                NS_light = 2'b01; // Yellow
+                EW_light = 2'b00; // Red
             end
 
-            2: begin
-                if(count == GREEN_TIME-1) begin
-                    state <= 3;
-                    count <= 0;
-                end
-                else count <= count + 1;
+            S2: begin
+                NS_light = 2'b00; // Red
+                EW_light = 2'b10; // Green
             end
 
-            3: begin
-                if(count == YELLOW_TIME-1) begin
-                    state <= 0;
-                    count <= 0;
-                end
-                else count <= count + 1;
+            S3: begin
+                NS_light = 2'b00; // Red
+                EW_light = 2'b01; // Yellow
             end
 
+            default: begin
+                NS_light = 2'b00;
+                EW_light = 2'b00;
+            end
         endcase
     end
-end
-
-always @(*) begin
-    ns_red = 0;
-    ns_yellow = 0;
-    ns_green = 0;
-    ew_red = 0;
-    ew_yellow = 0;
-    ew_green = 0;
-
-    case(state)
-        0: begin ns_green = 1; ew_red = 1; end
-        1: begin ns_yellow = 1; ew_red = 1; end
-        2: begin ns_red = 1; ew_green = 1; end
-        3: begin ns_red = 1; ew_yellow = 1; end
-    endcase
-end
 
 endmodule
