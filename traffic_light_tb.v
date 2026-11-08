@@ -26,12 +26,32 @@ initial begin
 
     #10 reset = 0;
 
-    #100;
+    #1;
+    if (NS_light == 2'b10 && EW_light == 2'b00)
+        $display("S0 PASS");
+    else $display("S0 FAIL");
+
+    #10;
+    if (NS_light == 2'b01 && EW_light == 2'b00)
+        $display("S1 PASS");
+    else $display("S1 FAIL");
+
+    #10;
+    if (NS_light == 2'b00 && EW_light == 2'b10)
+        $display("S2 PASS");
+    else $display("S2 FAIL");
+
+    #10;
+    if (NS_light == 2'b00 && EW_light == 2'b01)
+        $display("S3 PASS");
+    else $display("S3 FAIL");
+
+    #20;
     $finish;
 end
 
 initial begin
-    $monitor("Time=%0t | NS_light=%b | EW_light=%b",
+    $monitor("Time=%0t | NS=%b | EW=%b",
              $time, NS_light, EW_light);
 end
 
