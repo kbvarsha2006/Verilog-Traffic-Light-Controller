@@ -1,19 +1,19 @@
-# Traffic Light Controller Using Verilog
+# Verilog-Based Traffic Light Controller
 
-## Project Overview
-This project implements a traffic light controller using Verilog HDL. It controls traffic signals for two roads: North-South and East-West, using a Finite State Machine (FSM).
+## Project Description
+This project implements a traffic light controller using Verilog HDL and a Finite State Machine (FSM). It controls traffic signals for two roads: North-South and East-West.
 
 ## Objectives
 - To design a traffic light controller using Verilog.
 - To understand Finite State Machines (FSM).
 - To simulate traffic signal operations.
-- To synthesize the Verilog design using Yosys.
+- To perform logic synthesis using Yosys.
 
 ## Software Tools Used
 - Visual Studio Code
 - Icarus Verilog
+- GTKWave
 - Yosys
-- GTKWave (optional waveform viewer)
 
 ## Traffic Light Sequence
 1. North-South Green, East-West Red.
@@ -22,16 +22,18 @@ This project implements a traffic light controller using Verilog HDL. It control
 4. North-South Red, East-West Yellow.
 
 ## Simulation
-The design was simulated using Icarus Verilog. The simulation output was successfully verified, and a VCD waveform file was generated.
+The design was simulated using Icarus Verilog. The generated VCD waveform was opened and verified using GTKWave.
 
 ## Synthesis
-The Verilog design was successfully synthesized using Yosys. The synthesis process detected the FSM and completed with zero reported problems.
+The Verilog design was synthesized using Yosys 0.66. The synthesized Verilog output is saved as `traffic_light_synth.v`.
 
 ## Project Files
 - `traffic_light.v` – Main Verilog design.
 - `traffic_light_tb.v` – Testbench.
 - `traffic_light.vcd` – Simulation waveform.
-- `traffic_light_synth.v` – Synthesized Verilog output.
+- `traffic_light_sim` – Compiled simulation output.
+- `traffic_light_synth.v` – Synthesized Verilog design.
+- `traffic_light_waveform.png` – Waveform screenshot.
 
 ## Conclusion
-The traffic light controller was successfully designed, simulated, and synthesized using Verilog HDL, Icarus Verilog, and Yosys.
+The traffic light controller was successfully designed using Verilog HDL, simulated using Icarus Verilog, visualized using GTKWave, and synthesized using Yosys.
