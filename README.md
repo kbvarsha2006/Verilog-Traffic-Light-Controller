@@ -54,4 +54,4 @@ yosys -p "read_verilog traffic_light_controller.v; hierarchy -top traffic_light_
 ```
 
 ## Result
-The design successfully completes simulation of all four traffic light states and passes Yosys synthesis checks.
+The design successfully passes all six automated testbench checks, covering all four traffic light states, state cycling, and reset operation. Yosys synthesis completes successfully.
